@@ -1,0 +1,79 @@
+@import '../styles/variables';
+
+.contact-section {
+  background-color: $gray-100;
+  padding: 60px 0;
+}
+
+.contact-info {
+  height: 100%;
+  padding: 30px;
+  background-color: $white;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow-sm;
+  
+  h3 {
+    color: $gray-800;
+    font-weight: $font-weight-semibold;
+    margin-bottom: 1.5rem;
+  }
+  
+  p {
+    color: $gray-700;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+}
+
+.contact-method {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  
+  .contact-icon {
+    font-size: 1.2rem;
+    color: $primary-color;
+    margin-right: 15px;
+    margin-top: 5px;
+  }
+  
+  h5 {
+    color: $gray-800;
+    margin-bottom: 0.5rem;
+    font-weight: $font-weight-medium;
+  }
+  
+  p {
+    color: $gray-600;
+    margin-bottom: 0;
+  }
+}
+
+.contact-form-card {
+  border: none;
+  box-shadow: $box-shadow-sm;
+  
+  h4 {
+    color: $gray-800;
+    font-weight: $font-weight-semibold;
+  }
+  
+  .form-label {
+    color: $gray-700;
+    font-weight: $font-weight-medium;
+  }
+  
+  .form-control {
+    padding: 0.65rem 1rem;
+    border-color: $gray-300;
+    
+    &:focus {
+      border-color: $primary-color;
+      box-shadow: 0 0 0 0.25rem rgba($primary-color, 0.25);
+    }
+  }
+  
+  textarea.form-control {
+    resize: none;
+  }
+} 

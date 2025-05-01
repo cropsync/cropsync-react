@@ -1,0 +1,136 @@
+@import '../styles/variables';
+
+.floating-weather-widget {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  z-index: 100;
+  max-width: 300px;
+  
+  @media (max-width: $breakpoint-md) {
+    position: static;
+    margin: 1rem auto;
+    max-width: 90%;
+  }
+}
+
+.weather-card {
+  background-color: $card-bg;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow-md;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    box-shadow: $box-shadow-lg;
+    transform: translateY(-5px);
+  }
+  
+  .weather-icon {
+    color: $primary-color;
+    margin-bottom: 0.5rem;
+  }
+  
+  .location {
+    font-weight: $font-weight-semibold;
+    font-size: 1.1rem;
+    color: $gray-800;
+  }
+  
+  .weather-temp {
+    font-weight: $font-weight-medium;
+    
+    .temp {
+      font-size: 1.2rem;
+      color: $primary-color;
+    }
+  }
+  
+  .weather-details {
+    font-size: 0.9rem;
+    color: $gray-600;
+  }
+}
+
+// Dark mode styles
+body.dark-theme {
+  .weather-card {
+    background-color: $dark-bg-secondary;
+    border-color: $dark-border;
+    
+    .location {
+      color: $dark-text-primary;
+    }
+    
+    .weather-details {
+      color: $dark-text-secondary;
+    }
+  }
+}
+
+.weather-section {
+  background-color: $white;
+  padding: 60px 0;
+}
+
+.weather-card {
+  border: none;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow-sm;
+  overflow: hidden;
+}
+
+.location {
+  font-weight: $font-weight-semibold;
+  color: $gray-800;
+  font-size: 1.2rem;
+}
+
+.weather-icon {
+  font-size: 3rem;
+  color: $secondary-color;
+  margin: 15px 0;
+}
+
+.weather-temp {
+  margin-bottom: 25px;
+  
+  .temp {
+    font-size: 3rem;
+    font-weight: $font-weight-bold;
+    color: $primary-color;
+  }
+  
+  .degree {
+    font-size: 1.5rem;
+    color: $primary-color;
+    vertical-align: top;
+    margin-left: 5px;
+  }
+}
+
+.weather-details {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.weather-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  i {
+    font-size: 1.2rem;
+    color: $gray-600;
+    margin-bottom: 5px;
+  }
+  
+  span {
+    font-size: 0.9rem;
+    color: $gray-700;
+  }
+} 

@@ -1,0 +1,58 @@
+@import '../styles/variables';
+
+.about-section {
+  background-color: $white;
+  padding: 60px 0;
+}
+
+.about-image-container {
+  height: 100%;
+  border-radius: $border-radius;
+  overflow: hidden;
+  box-shadow: $box-shadow-sm;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.about-content {
+  h3 {
+    color: $gray-800;
+    font-weight: $font-weight-semibold;
+  }
+  
+  p {
+    color: $gray-700;
+    margin-bottom: 1.2rem;
+    line-height: 1.6;
+  }
+}
+
+.feature-card {
+  border: none;
+  box-shadow: $box-shadow-sm;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $box-shadow-md;
+  }
+  
+  .feature-icon {
+    font-size: 2.5rem;
+    color: $primary-color;
+  }
+  
+  .card-title {
+    font-weight: $font-weight-semibold;
+    color: $gray-800;
+    margin-bottom: 1rem;
+  }
+  
+  .card-text {
+    color: $gray-600;
+  }
+} 

@@ -1,0 +1,103 @@
+@import '../styles/variables';
+
+.crop-tool-section {
+  background-color: $gray-100;
+  padding: 60px 0;
+  transition: background-color 0.3s ease;
+}
+
+.tool-card, .result-card, .guide-card {
+  border: none;
+  box-shadow: $box-shadow-sm;
+  height: 100%;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    box-shadow: $box-shadow-md;
+  }
+  
+  h4 {
+    color: $gray-800;
+    margin-bottom: 20px;
+  }
+}
+
+.timeline-item {
+  padding: 8px 0;
+  border-left: 2px solid $primary-color;
+  padding-left: 15px;
+  margin-bottom: 10px;
+  position: relative;
+  
+  &:before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: $primary-color;
+    left: -6px;
+    top: 12px;
+  }
+}
+
+.timeline-label {
+  font-weight: $font-weight-semibold;
+  color: $gray-800;
+}
+
+.timeline-date {
+  color: $primary-color;
+}
+
+.timeline-days {
+  font-size: 0.9rem;
+  color: $gray-500;
+}
+
+.weather-tip {
+  background-color: rgba($primary-light, 0.1);
+  border-left: 3px solid $primary-color;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.chart-container {
+  margin: 0 auto;
+}
+
+.guide-step {
+  .step-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .step-description {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+  }
+  
+  .step-tasks {
+    padding-left: 20px;
+    
+    li {
+      margin-bottom: 5px;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+// Empty state styling
+.empty-state {
+  color: $gray-500;
+  padding: 2rem;
+  text-align: center;
+  
+  h5 {
+    color: $gray-700;
+    margin-bottom: 0.5rem;
+  }
+}
+
+// Dark mode specific styles are handled in main.scss 

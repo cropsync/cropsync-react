@@ -1,0 +1,131 @@
+@import '../styles/variables';
+
+.footer {
+  background-color: $gray-900;
+  color: $gray-300;
+  
+  .container {
+    max-width: 1200px;
+  }
+}
+
+.footer-heading {
+  color: $white;
+  font-weight: $font-weight-semibold;
+  font-size: 1.1rem;
+}
+
+.footer-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.social-icons {
+  display: flex;
+  margin-top: 1.5rem;
+  
+  .social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: rgba($white, 0.1);
+    border-radius: 50%;
+    margin-right: 10px;
+    color: $white;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background-color: $primary-color;
+      color: $white;
+    }
+    
+    i {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+.footer-links {
+  list-style: none;
+  padding-left: 0;
+  
+  li {
+    margin-bottom: 0.8rem;
+    
+    a {
+      color: $gray-400;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-size: 0.95rem;
+      
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+.footer-contact {
+  list-style: none;
+  padding-left: 0;
+  
+  li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    
+    i {
+      color: $primary-color;
+      margin-right: 10px;
+      margin-top: 5px;
+      font-size: 1rem;
+    }
+    
+    span {
+      font-size: 0.95rem;
+      color: $gray-400;
+    }
+  }
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba($white, 0.1);
+  
+  p {
+    font-size: 0.9rem;
+    color: $gray-500;
+  }
+}
+
+.footer-bottom-links {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+  
+  li {
+    margin-left: 20px;
+    
+    a {
+      color: $gray-500;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s ease;
+      
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+  
+  @media (max-width: $breakpoint-md) {
+    justify-content: center;
+    
+    li {
+      margin: 0 10px;
+    }
+  }
+} 

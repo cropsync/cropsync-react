@@ -1,0 +1,223 @@
+@import './variables';
+@import '~bootstrap/scss/bootstrap';
+
+// Global styles
+body {
+  font-family: $font-family-base;
+  color: $gray-800;
+  background-color: $gray-100;
+  line-height: $line-height-base;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+// Dark Mode Styles
+body.dark-theme {
+  color: $dark-text-primary;
+  background-color: $dark-bg-primary;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: $dark-text-primary;
+  }
+
+  .text-dark {
+    color: $dark-text-primary !important;
+  }
+
+  .bg-light {
+    background-color: $dark-bg-secondary !important;
+  }
+
+  .section-title {
+    color: $dark-text-primary;
+  }
+
+  .custom-card {
+    background-color: $dark-bg-secondary;
+    box-shadow: $dark-box-shadow-md;
+
+    &:hover {
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    &__header {
+      border-bottom-color: $dark-border;
+
+      h3 {
+        color: $primary-light;
+      }
+    }
+  }
+
+  .card, .tool-card, .result-card, .guide-card, .weather-card {
+    background-color: $dark-bg-secondary;
+    color: $dark-text-primary;
+    border-color: $dark-border;
+    box-shadow: $dark-box-shadow-md;
+  }
+
+  .crop-tool-section, .weather-section {
+    background-color: $dark-bg-primary;
+  }
+
+  .form-control, .form-select {
+    background-color: $dark-bg-tertiary;
+    border-color: $dark-border;
+    color: $dark-text-primary;
+
+    &:focus {
+      background-color: $dark-bg-tertiary;
+      color: $dark-text-primary;
+      border-color: $primary-color;
+    }
+  }
+
+  .timeline-item {
+    &::before {
+      background: $primary-light;
+    }
+  }
+
+  .timeline-label {
+    color: $dark-text-primary;
+  }
+
+  .timeline-days {
+    color: $dark-text-secondary;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-heading;
+  font-weight: $font-weight-bold;
+  line-height: 1.3;
+}
+
+// Custom utility classes
+.text-primary {
+  color: $primary-color !important;
+}
+
+.bg-primary {
+  background-color: $primary-color !important;
+}
+
+.text-white {
+  color: $white !important;
+}
+
+.text-dark {
+  color: $gray-800 !important;
+}
+
+.bg-dark {
+  background-color: $gray-900 !important;
+}
+
+.bg-light {
+  background-color: $gray-100 !important;
+}
+
+.shadow {
+  box-shadow: $box-shadow-md !important;
+}
+
+.transition {
+  transition: $transition-base !important;
+}
+
+// Section styles
+.section {
+  padding: $spacer-xl 0;
+}
+
+.section-header {
+  margin-bottom: $spacer-xl;
+  text-align: center;
+
+  h2 {
+    font-size: 2.5rem;
+    color: $primary-color;
+    margin-bottom: $spacer;
+    position: relative;
+    padding-bottom: $spacer;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 80px;
+      height: 3px;
+      background-color: $primary-color;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  p {
+    font-size: $font-size-lg;
+    color: $gray-800;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+}
+
+// Card styles
+.custom-card {
+  background-color: $white;
+  border-radius: $border-radius;
+  padding: $spacer-lg;
+  box-shadow: $box-shadow-md;
+  height: 100%;
+  transition: $transition-base;
+
+  &:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+  }
+
+  &__header {
+    margin-bottom: $spacer;
+    padding-bottom: $spacer;
+    border-bottom: 1px solid $gray-300;
+
+    h3 {
+      color: $primary-color;
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Button styles
+.btn {
+  font-weight: $font-weight-medium;
+  padding: $spacer-sm $spacer;
+  border-radius: $border-radius;
+  transition: $transition-base;
+
+  &-primary {
+    background-color: $primary-color;
+    border-color: $primary-color;
+
+    &:hover, &:focus {
+      background-color: $primary-dark;
+      border-color: $primary-dark;
+    }
+  }
+
+  &-outline-primary {
+    color: $primary-color;
+    border-color: $primary-color;
+
+    &:hover, &:focus {
+      background-color: $primary-color;
+      color: $white;
+    }
+  }
+}
+
+.section-title {
+  font-weight: $font-weight-bold;
+  color: $gray-800;
+  margin-bottom: 2rem;
+} 

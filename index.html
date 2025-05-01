@@ -1,155 +1,260 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Crop Selector</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CropSync - Smart Crop Management</title>
   <link rel="icon" type="image/x-icon" href="favicon-crop.png">
   <link rel="mask-icon" href="/docs/5.2/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
   <link rel="apple-touch-icon" href="/docs/5.2/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.12/css/weather-icons.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <nav id="nav" class="nav">
-        <div class="container1">
-            <div class="logo">
-                <a href="#home">
-                    <img src="cropsync.png" alt="CropSync" width="175px">
-                </a>
-            </div>
-            <div id="mainListDiv" class="main_list">
-                <ul class="navlinks">
-                    <li><a href="#">Weather</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            <span class="navTrigger">
-                <i></i>
-                <i></i>
-                <i></i>
-            </span>
-        </div>
-    </nav>
+  <!-- Navigation -->
+  <nav id="nav" class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#home">
+        <img src="cropsync.png" alt="CropSync" width="150">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#weather">Weather</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-    <div id="page-container">
-        <div id="content-wrap">
+  <!-- Hero Section -->
+  <header id="home" class="hero-section">
+    <div class="container text-center">
+      <h1 class="hero-title">Smart Crop Management</h1>
+      <p class="hero-subtitle">Optimize your farming with data-driven insights</p>
+    </div>
+  </header>
 
-    <section class="home">
-    </section>
-    <div style="height: 1000px;">
-      <div id="weather_wrapper">
-        <div class="weatherCard">
-            <div class="currentTemp">
-                <span class="temp"></span>
-                <span class="location"></span>
+  <!-- Weather Section -->
+  <section id="weather" class="weather-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <div class="weather-card">
+            <div class="weather-header">
+              <h2>Current Weather</h2>
+              <p class="location">Himalayas</p>
             </div>
-            <div class="currentWeather">
-                <span class="conditions"></span>
-                <div class="info">
-                    <span class="rain"></span>
-                    <span class="wind"></span>
+            <div class="weather-body">
+              <div class="weather-temp">
+                <span class="temp">--</span>
+                <span class="unit">°C</span>
+              </div>
+              <div class="weather-icon">
+                <i class="wi wi-day-sunny"></i>
+              </div>
+              <div class="weather-details">
+                <div class="weather-detail">
+                  <i class="wi wi-raindrops"></i>
+                  <span class="rain">-- mm</span>
                 </div>
+                <div class="weather-detail">
+                  <i class="wi wi-strong-wind"></i>
+                  <span class="wind">-- km/h</span>
+                </div>
+              </div>
             </div>
-        </div>
-    </div>
-  <form>
-    <div class="parent-container">
-    <div class="dropdown">
-        <a>Enter Crop Details</a>
-      <label for="category">Select a category:</label>
-      <select id="category">
-        <option value="kharif">Kharif(Monsoon Crops)</option>
-        <option value="rabi">Rabi(Winter Crops)</option>
-      </select>
-    </div>
-    <div class="dropdown">
-      <label for="crop">Select a crop:</label>
-      <select id="crop"></select>
-      <label for="startDate">Start Date:</label>
-    <div class="input-container">
-        <input type="date" id="startDate">
-        <button id="calculateButton">Calculate</button>
-    </div>
-    </div>
-    <button id="enterButton" type="button">Enter</button>    
-    <div id="result"></div>
-    <div class="resume" id="resume">
-        <div class="col-lg-6">
-        <h3 class="resume-title">Step-by-Step Process:</h3>
-        <div class="resume-item">
+          </div>
         </div>
       </div>
     </div>
-    </div>
-  </form>
-  
-
-  <section id="about" class="about">
-    <a class="weatherwidget-io" href="https://forecast7.com/en/31d1077d17/himachal-pradesh/" data-label_1="HIMACHAL PRADESH" data-label_2="WEATHER" data-theme="grass" >HIMACHAL PRADESH WEATHER</a>
-<script>
-!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
-</script>
-    
-    <div class="container" data-aos="fade-up">
-        <div class="section-title">
-          <h2>About Us </h2>
-          <!-- <img src="cropsync.png" alt="CropSync" width="125px"> -->
-          <p class="section-description">
-            CropSync is a cutting-edge technology company dedicated to revolutionizing the way farmers track and manage their crops. We understand the challenges faced by modern farmers and aim to provide them with innovative solutions to enhance their productivity and efficiency. form farming practices and cultivate a more sustainable future. Experience the power of CropSync and unlock the true potential of your crops.
-          </p>
-          
-    
-        </div>
-    </div>
-    
-
-    </section>
-    </div>
-
-    
-
-  <section id="contact" class="contact">
-
-    <footer class="footer">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7055748.246152731!2d80.29902304295119!3d30.288664360022615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3995b9ebef1235bd%3A0x3ae1297b70640201!2sHimalayas!5e0!3m2!1sen!2sin!4v1696337272659!5m2!1sen!2sin" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  
-
-        <ul class="social-icon">
-          <li class="social-icon__item"><a class="social-icon__link" href="#">
-              <ion-icon name="logo-facebook"></ion-icon>
-            </a></li>
-          <li class="social-icon__item"><a class="social-icon__link" href="#">
-              <ion-icon name="logo-twitter"></ion-icon>
-            </a></li>
-          <li class="social-icon__item"><a class="social-icon__link" href="#">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a></li>
-          <li class="social-icon__item"><a class="social-icon__link" href="#">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a></li>
-        </ul>
-        <ul class="menu">
-          <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
-          <li class="menu__item"><a class="menu__link" href="#">About</a></li>
-          <li class="menu__item"><a class="menu__link" href="#">Services</a></li>
-          <li class="menu__item"><a class="menu__link" href="#">Team</a></li>
-          <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
-    
-        </ul>
-        <p>&copy;2023 CropSync | All Rights Reserved</p>
-        <div id="google_translate_element"></div>
-        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-      <script type="text/javascript">
-        function googleTranslateElementInit() {
-          new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-        }
-        </script>
-      </footer>
-      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   </section>
-  </div>
+
+  <!-- Crop Tool Section -->
+  <section id="crop-tool" class="crop-tool-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2>Crop Planning Tool</h2>
+        <p>Get customized growing plans for your crops</p>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="crop-form-card">
+            <h3>Enter Crop Details</h3>
+            <form id="cropForm">
+              <div class="mb-3">
+                <label for="category" class="form-label">Select a category:</label>
+                <select id="category" class="form-select">
+                  <option value="kharif">Kharif (Monsoon Crops)</option>
+                  <option value="rabi">Rabi (Winter Crops)</option>
+                </select>
+              </div>
+              
+              <div class="mb-3">
+                <label for="crop" class="form-label">Select a crop:</label>
+                <select id="crop" class="form-select"></select>
+              </div>
+              
+              <div class="mb-3">
+                <label for="startDate" class="form-label">Start Date:</label>
+                <input type="date" id="startDate" class="form-control">
+              </div>
+              
+              <div class="d-grid gap-2">
+                <button id="calculateButton" type="button" class="btn btn-outline-primary">Calculate Timeline</button>
+                <button id="enterButton" type="button" class="btn btn-primary">View Growing Guide</button>
+              </div>
+              
+              <div id="result" class="result-box mt-3"></div>
+            </form>
+          </div>
+        </div>
+        
+        <div class="col-lg-6">
+          <div class="guide-card">
+            <h3 class="guide-title">Growing Guide</h3>
+            <div class="resume-item" id="crop-guide">
+              <p class="text-center guide-placeholder">Select a crop and click "View Growing Guide" to see detailed instructions</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2>About CropSync</h2>
+      </div>
+      
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <div class="about-image">
+            <img src="about-image.jpg" alt="Farming Technology" class="img-fluid rounded">
+          </div>
+        </div>
+        
+        <div class="col-lg-6">
+          <div class="about-content">
+            <p>CropSync is a cutting-edge technology company dedicated to revolutionizing the way farmers track and manage their crops. We understand the challenges faced by modern farmers and aim to provide them with innovative solutions to enhance their productivity and efficiency.</p>
+            <p>Our mission is to transform farming practices and cultivate a more sustainable future. Experience the power of CropSync and unlock the true potential of your crops.</p>
+            
+            <div class="weather-widget mt-4">
+              <a class="weatherwidget-io" href="https://forecast7.com/en/31d1077d17/himachal-pradesh/" data-label_1="HIMACHAL PRADESH" data-label_2="WEATHER" data-theme="pure">HIMACHAL PRADESH WEATHER</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2>Contact Us</h2>
+        <p>Get in touch with our team</p>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <h3>Our Location</h3>
+                <p>Himachal Pradesh, India</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <h3>Email Us</h3>
+                <p>info@cropsync.com</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <i class="fas fa-phone-alt"></i>
+              <div>
+                <h3>Call Us</h3>
+                <p>+91 98765 43210</p>
+              </div>
+            </div>
+            
+            <div class="map-container">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7055748.246152731!2d80.29902304295119!3d30.288664360022615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3995b9ebef1235bd%3A0x3ae1297b70640201!2sHimalayas!5e0!3m2!1sen!2sin!4v1696337272659!5m2!1sen!2sin" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-6">
+          <form class="contact-form">
+            <div class="mb-3">
+              <input type="text" class="form-control" placeholder="Your Name" required>
+            </div>
+            <div class="mb-3">
+              <input type="email" class="form-control" placeholder="Your Email" required>
+            </div>
+            <div class="mb-3">
+              <input type="text" class="form-control" placeholder="Subject">
+            </div>
+            <div class="mb-3">
+              <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary">Send Message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer-section">
+    <div class="container">
+      <div class="footer-content">
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#weather">Weather</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        
+        <div class="translate-box" id="google_translate_element"></div>
+        
+        <p class="copyright">&copy; 2023 CropSync | All Rights Reserved</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    }
+    
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+  </script>
   <script src="scripts.js"></script>
 </body>
 </html>
